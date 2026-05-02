@@ -4,7 +4,7 @@
 import java.util.Random;
  
 // MAin class 
-class Karatsuba {
+class OriginalKaratsuba {
  
     // Main driver method 
     public static long mult(long x, long y) {

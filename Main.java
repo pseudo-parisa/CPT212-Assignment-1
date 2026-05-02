@@ -11,14 +11,14 @@ public class Main {
         // Testing opCount
         SimpleMultiplication.opCount = 0; // Reset before starting
         
-        long startTime = System.currentTimeMillis();
+        //long startTime = System.currentTimeMillis();
         String result = SimpleMultiplication.multiply(n1, n2);
-        long endTime = System.currentTimeMillis();
-        System.out.println("n1: " + n1);
-        System.out.println("n2: " + n2);
+        //long endTime = System.currentTimeMillis();
+        //System.out.println("n1: " + n1);
+        //System.out.println("n2: " + n2);
         System.out.println("Final Result: " + result);
         System.out.println("Total Operations: " + SimpleMultiplication.opCount);
-        System.out.println("Completed 10,000 digits in: " + (endTime - startTime) + "ms");
+        //System.out.println("Completed 10,000 digits in: " + (endTime - startTime) + "ms");
 
     }
 
