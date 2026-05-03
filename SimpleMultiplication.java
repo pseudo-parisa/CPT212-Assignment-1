@@ -7,19 +7,19 @@ public class SimpleMultiplication {
         int n = num1.length();
         int m = num2.length();
         
-        // Assignments for n and m
-        opCount += 2; 
+        // Assignments and length checks for n and m
+        opCount += 4; 
         
         // Result can have up to n + m digits
         int[] result = new int[n + m];
         
-        // Array initialization
-        opCount++; 
+        // Array initialization and addition
+        opCount += 2; 
 
         // Loop through each digit of the multiplier (bottom number)
         for (int i = m - 1; i >= 0; i--) {
-            // Loop assignment/comparison
-            opCount++; 
+            // i assignment, m - 1 subtraction, comparison, and loop decrement
+            opCount += 4;
 
             int carrier = 0;
             // Carrier assignment
@@ -27,24 +27,24 @@ public class SimpleMultiplication {
 
             //Loop through each digit of the multiplicand (top number)
             for (int j = n - 1; j >= 0; j--){
-                // Inner loop assignment/comparison
-                opCount++; 
+                // j assignment, n - 1 subtraction, comparison, and loop decrement
+                opCount += 4; 
 
                 int multiplierDigit = num2.charAt(i) - '0';
                 int multiplicandDigit = num1.charAt(j) - '0';
-                // Char extractions
-                opCount += 2; 
+                // Char extractions, subtractions, and assignments
+                opCount += 6; 
             
                 // Multiply digits and add previous carrier
                 int product = (multiplierDigit * multiplicandDigit) + carrier;
-                // Multiplication and addition
-                opCount += 2; 
+                // Multiplication, assignment, and addition
+                opCount += 3; 
 
                 // Determine partial product and carrier
                 int partialProduct = product % 10;
                 carrier = product / 10;
-                // Modulo and division
-                opCount += 2; 
+                // Assignment, modulo, and division
+                opCount += 5; 
 
                 // Add to the correct position in final result array
                 int currentPos = i + j + 1;
@@ -52,7 +52,7 @@ public class SimpleMultiplication {
                 result[currentPos] = sum % 10;
                 carrier += sum / 10; // Extra carrier from adding to result
                 // Array access, additions, and assignments
-                opCount += 6; 
+                opCount += 10; 
             }
             // Add remaining carrier to the final position
             result[i] += carrier;
