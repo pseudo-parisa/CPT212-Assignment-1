@@ -4,23 +4,34 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         
+        // Number of digits for the random numbers 
+        int[] digits = {10, 100, 500, 1000, 2500, 5000, 10000};
+
         // Print partial products and carriers
-        String n1 = generateRandomDigits(10000);
-        String n2 = generateRandomDigits(10000);
+        for (int n: digits) {
+            
+            String n1 = generateRandomDigits(n);
+            String n2 = generateRandomDigits(n);
 
-        // Testing opCount
-        SimpleMultiplication.opCount = 0; // Reset before starting
-        
-        //long startTime = System.currentTimeMillis();
-        String result = SimpleMultiplication.multiply(n1, n2);
-        //long endTime = System.currentTimeMillis();
-        //System.out.println("n1: " + n1);
-        //System.out.println("n2: " + n2);
-        System.out.println("Final Result: " + result);
-        System.out.println("Total Operations: " + SimpleMultiplication.opCount);
-        //System.out.println("Completed 10,000 digits in: " + (endTime - startTime) + "ms");
+            // opCount
+            // Reset before starting
+            SimpleMultiplication.opCount = 0; 
+            RefactoredKaratsuba.opCount = 0;
 
-    }
+            String simple_mult_result = SimpleMultiplication.multiply(n1, n2);        
+            //System.out.println("n1: " + n1);
+            //System.out.println("n2: " + n2);
+            //System.out.println("Final Result: " + simple_mult_result);
+            //System.out.println("Total Operations: " + SimpleMultiplication.opCount);
+
+
+            String karatsuba_result = RefactoredKaratsuba.mult(new java.math.BigInteger(n1), new java.math.BigInteger(n2)).toString();
+            //System.out.println("Final Result: " + karatsuba_result);
+            //System.out.println("Total Operations (Refactored Karatsuba): " + RefactoredKaratsuba.opCount);
+
+            System.out.println(n + "," + SimpleMultiplication.opCount + "," + RefactoredKaratsuba.opCount);   
+        }
+}
 
     // Generate random n-digit numbers
     public static String generateRandomDigits(int n) {
