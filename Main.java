@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) {
         
         // Number of digits for the random numbers 
-        int[] digits = {1,2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
+        int[] digits = {1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
+        
+        System.out.println("Analysis of both algorithms");
 
         // Print partial products and carriers
         for (int n: digits) {
@@ -33,9 +35,14 @@ public class Main {
             //System.out.println("Final Result: " + karatsuba_result);
             //System.out.println("Total Operations (Refactored Karatsuba): " + RefactoredKaratsuba.opCount);
 
-            System.out.println(n + "," + SimpleMultiplication.opCount + "," + RefactoredKaratsuba.opCount);   
-            System.out.println("Time taken for simple multiplication: " + (endTime - startTime) + " nanoseconds");
-            System.out.println("Time taken for karatsuba multiplication: " + (karatsubaEndTime - karatsubaStartTime) + " nanoseconds");
+            // output formatting
+            System.out.println("Number of digits: " + n + "     Ops of Simple Multi.:" + SimpleMultiplication.opCount + "      Ops of Karatsuba" + RefactoredKaratsuba.opCount);
+            System.out.println();   
+            System.out.println("Time taken for Simple Multiplication: " + (endTime - startTime) + " nanoseconds");
+            System.out.println("Time taken for Karatsuba Multiplication: " + (karatsubaEndTime - karatsubaStartTime) + " nanoseconds");
+            System.out.println("******************************************************************************************************************************************************************");
+
+            System.out.println();
         }
 }
 
