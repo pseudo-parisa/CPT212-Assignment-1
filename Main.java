@@ -5,7 +5,8 @@ public class Main {
     public static void main(String[] args) {
         
         // Number of digits for the random numbers 
-        int[] digits = {10, 100, 500, 1000, 2500, 5000, 10000};
+        int[] digits = {1,10,100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
+
 
         // Print partial products and carriers
         for (int n: digits) {
@@ -18,7 +19,7 @@ public class Main {
             SimpleMultiplication.opCount = 0; 
             RefactoredKaratsuba.opCount = 0;
 
-            String simple_mult_result = SimpleMultiplication.multiply(n1, n2);        
+            String simple_mult_result = SimpleMultiplication.multi(n1, n2);        
             //System.out.println("n1: " + n1);
             //System.out.println("n2: " + n2);
             //System.out.println("Final Result: " + simple_mult_result);
