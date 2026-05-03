@@ -5,8 +5,7 @@ public class Main {
     public static void main(String[] args) {
         
         // Number of digits for the random numbers 
-        int[] digits = {1,10,100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
-
+        int[] digits = {1,2,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
 
         // Print partial products and carriers
         for (int n: digits) {
@@ -19,18 +18,24 @@ public class Main {
             SimpleMultiplication.opCount = 0; 
             RefactoredKaratsuba.opCount = 0;
 
-            String simple_mult_result = SimpleMultiplication.multi(n1, n2);        
+            // Calculating time taken for simple multiplication and karatsuba multiplication
+            long startTime = System.nanoTime();
+            String simple_mult_result = SimpleMultiplication.multi(n1, n2);
+            long endTime = System.nanoTime();
             //System.out.println("n1: " + n1);
             //System.out.println("n2: " + n2);
             //System.out.println("Final Result: " + simple_mult_result);
             //System.out.println("Total Operations: " + SimpleMultiplication.opCount);
 
-
+            long karatsubaStartTime = System.nanoTime();
             String karatsuba_result = RefactoredKaratsuba.mult(new java.math.BigInteger(n1), new java.math.BigInteger(n2)).toString();
+            long karatsubaEndTime = System.nanoTime();
             //System.out.println("Final Result: " + karatsuba_result);
             //System.out.println("Total Operations (Refactored Karatsuba): " + RefactoredKaratsuba.opCount);
 
             System.out.println(n + "," + SimpleMultiplication.opCount + "," + RefactoredKaratsuba.opCount);   
+            System.out.println("Time taken for simple multiplication: " + (endTime - startTime) + " nanoseconds");
+            System.out.println("Time taken for karatsuba multiplication: " + (karatsubaEndTime - karatsubaStartTime) + " nanoseconds");
         }
 }
 
