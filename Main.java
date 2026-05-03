@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         
         // Number of digits for the random numbers 
-        int[] digits = {1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
+        int[] digits = {1, 10, 20, 100,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000};
         
         System.out.println("Analysis of both algorithms");
 
