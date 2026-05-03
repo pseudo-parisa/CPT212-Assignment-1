@@ -23,7 +23,7 @@ public class SimpleMultiplication {
         String finalAns = multi(firstNumString, secondNumString);
         System.out.println();
         System.out.println("The length of the answer is " + finalAns.length());
-        //System.out.println("The product of the two terms is " + finalAns);
+        // System.out.println("The product of the two terms is " + finalAns);
 
     }
 
