@@ -1,5 +1,7 @@
 // Simple multiplication algorithm
 
+import java.util.Arrays;
+
 public class SimpleMultiplication { 
 
     public static long opCount;
@@ -58,7 +60,7 @@ public class SimpleMultiplication {
 
                 // printing statements for each step
                 // recommended to uncomment when dealing with larger digit count
-                //System.out.println("Array contents:" + Arrays.toString(result) +    "     Partial products: " + result[partialProduct] + "      Carriers: " + result[carry]);
+                System.out.println("Array contents:" + Arrays.toString(result) +    "     Partial products: " + result[partialProduct] + "      Carriers: " + result[carry]);
 
                 // right-most is parital product
                 // all carry will be added before stored into array
